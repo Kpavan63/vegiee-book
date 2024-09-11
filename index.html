@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vegetable Booking</title>
+    <link rel="stylesheet" href="style.css">
+    <script defer src="script.js"></script>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: Arial, sans-serif;
+        }
+        
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 2rem;
+            background-color: #4CAF50;
+            color: white;
+            transition: background-color 0.3s ease-in-out;
+        }
+        
+        .logo {
+            font-size: 1.5rem;
+            font-weight: bold;
+        }
+        
+        nav {
+            display: flex;
+            align-items: center;
+        }
+        
+        .nav-links {
+            display: flex;
+            list-style: none;
+            transition: transform 0.3s ease-in-out, max-height 0.3s ease-in-out;
+        }
+        
+        .nav-links li {
+            margin-left: 1rem;
+        }
+        
+        .nav-links a {
+            color: white;
+            text-decoration: none;
+            font-size: 1rem;
+            transition: color 0.3s ease-in-out;
+        }
+        
+        .nav-links a:hover {
+            color: #ffeb3b;
+        }
+        
+        .hamburger {
+            display: none;
+            flex-direction: column;
+            cursor: pointer;
+        }
+        
+        .hamburger .bar {
+            width: 25px;
+            height: 3px;
+            background-color: white;
+            margin: 4px 0;
+            transition: 0.4s;
+        }
+        
+        .hero-section {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 2rem;
+            background-color: #f5f5f5;
+            color: #333;
+            transition: background 0.3s ease-in-out;
+        }
+        
+        .hero-section .content {
+            max-width: 50%;
+        }
+        
+        .hero-section .content h1 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            text-align: center;
+        }
+        
+        .hero-section .content p {
+            font-size: 1.2rem;
+            margin-bottom: 0.5rem;
+            text-align: center;
+        }
+        
+        .hero-section .content .inspiration {
+            font-size: 1.5rem;
+            color: #4CAF50;
+            font-weight: bold;
+        }
+        
+        .hero-section .image-container {
+            max-width: 50%;
+        }
+        
+        .hero-section .image-container img {
+            width: 100%;
+            height: auto;
+            border-radius: 10px;
+        }
+
+        .btn {
+            display: flex;
+            gap: 15px;
+            justify-content: center;
+            margin-left: -50px;
+        }
+
+        .login, .Register {
+            text-decoration: none;
+            color: white;
+            background-color: #4CAF50;
+            padding: 10px 70px;
+            font-size: 20px;
+            border-radius: 12px;
+            font-weight: 700;
+            transition: background-color 0.3s;
+        }
+
+        .login:hover, .Register:hover {
+            background-color: #000000;
+        }
+        
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+                flex-direction: column;
+                width: 100%;
+                background-color: #000000;
+                position: absolute;
+                top: 70px;
+                left: 0;
+                max-height: 0;
+                overflow: hidden;
+                transform: translateX(100%);
+            }
+        
+            .nav-links.show {
+                display: flex;
+                max-height: 300px; /* Adjust as needed */
+                transform: translateX(0);
+            }
+        
+            .nav-links li {
+                text-align: center;
+                margin: 1rem 0;
+                transition: all 0.8s;
+            }
+
+            .nav-links li:hover {
+                background-color: #4CAF50;
+                padding: 10px;
+            }
+        
+            .hamburger {
+                display: flex;
+            }
+        
+            .hero-section {
+                flex-direction: column;
+            }
+        
+            .hero-section .content, .hero-section .image-container {
+                max-width: 100%;
+                text-align: center;
+            }
+        
+            .hero-section .image-container {
+                margin-top: 2rem;
+            }
+            .btn-pp {
+                display: flex;
+                gap: 15px;
+                justify-content: center;
+                margin-left: 0px;
+            }
+            .login, .Register {
+                text-decoration: none;
+                color: white;
+                background-color: #4CAF50;
+                padding: 10px 40px;
+                font-size: 20px;
+                border-radius: 12px;
+                font-weight: 700;
+                transition: background-color 0.3s;
+            }
+    
+            .login:hover, .Register:hover {
+                background-color: #000000;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="logo">VeggieBook</div>
+        <nav>
+            <ul class="nav-links">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#services">Services</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+            <div class="hamburger">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+        </nav>
+    </header>
+    <main>
+        <section id="home" class="hero-section">
+            <div class="content">
+                <h1>Fresh Vegetables Delivered to Your Doorstep</h1>
+                <p>Book your favorite vegetables online with ease.</p>
+                <p class="inspiration">"Eat fresh, stay healthy!"</p><br>
+                <div class="btn-pp">
+                    <a href="#" class="login">Login</a>
+                    <a href="#" class="Register">Register</a>
+                </div>
+            </div>
+            <div class="image-container">
+                <img src="https://img.freepik.com/premium-photo/assortment-organic-vegetables-fruits-wicker-baskets-generative-ai_847296-82.jpg?w=740" alt="Fresh Vegetables">
+            </div>
+        </section>
+        <!-- Add more sections as needed -->
+    </main>
+    <script>
+        const hamburger = document.querySelector('.hamburger');
+        const navLinks = document.querySelector('.nav-links');
+
+        hamburger.addEventListener('click', () => {
+            navLinks.classList.toggle('show');
+        });
+    </script>
+</body>
+</html>
